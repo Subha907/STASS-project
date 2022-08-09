@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--<link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')}}"/>-->
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon" />
+<title>Admin-Clinic-Section</title>
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
+
+*{
+            margin: 0px;
+            padding: 0px;
+           font-family: 'Source Sans Pro', sans-serif;
+        }
+body{
+  background:#ececec; 
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top:15%;
+  right: 0;
+  bottom:10%;
+  left: 0;
+  height:100%;
+  width:100%;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+nav{
+      display: flex;
+  background-color:#2f4858;
+   align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  flex-wrap: wrap;
+  color: white;
+    }
+    .logo{
+      font-size: 1.4rem;
+      font-weight: 600;
+      color:#fcc200;
+    }
+    nav ul{
+      display: flex;
+      color: white;
+    }
+    nav ul li{
+      margin: auto;
+            margin-right: 1rem;
+            list-style: none;
+    }
+    nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fcc200;
+}
+
+
+.eForm{
+  display: none;
+}
+.full-cont{
+	margin-top:;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.search-bar{
+  margin-top: 2rem;
+}
+.search-bar b input{
+	padding: 0.5rem 1rem;
+  margin-top: 1rem;
+}
+
+.myDIV {
+	
+  width: fit-content;
+  padding: 1rem 3rem;
+  display: ;
+  background-color:#fafad2;
+  margin-top: 5%;
+  
+  position: relative;
+  border-width: 5% 3%; 
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.en{
+  width: 150px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+}
+.en1:nth-child(even){
+  background-color: #e5e5e5;
+}
+.en1:nth-child(odd){
+  background-color:white;
+}
+p{
+font-size: 100%;
+margin-top: 4%;
+margin-bottom: 10%;
+}
+button{
+   /*background: linear-gradient(to top, #ccff33 0%, #00ffff 100%);*/
+   font-size:100%;
+  padding:;
+}
+button .edit{
+   
+   text-decoration:none;
+   color: white;
+}
+button .delete{
+   
+   text-decoration:none;
+   color: white;
+}
+td .deleteb{
+    background-color:orangered ;
+    padding:12% 16% 12% 16%;
+    border: none;
+    border-radius: 5px
+}
+td .editb{
+    background-color:rgb(0,127,255) ;
+    padding:12% 16% 12% 16%;
+    border: none;
+    border-radius: 5px;
+}
+.entryclass{
+    background: linear-gradient(to top, #ccff33 0%, #00ffff 100%);
+    padding:1%;
+    border: none;
+    border-radius: 5px
+}
+
+
+.note p{
+  background-color: white;
+  margin-left: 1rem;
+  width:fit-content;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 4px;
+  border-left: 5px solid orange;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #2f4858;
+   color: black;
+   text-align: center;
+   height: 10%;
+}
+.footer .fp{
+  
+  position:fixed;
+  bottom: -17%;
+  right:5%;
+  font-weight:900;
+  color:#ffffc2;
+}
+
+.container{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+}
+.clinicInfo{
+ margin-top: 1.5rem;
+ font-size: 1.5rem;
+ padding-bottom: 1rem;
+ border-radius: 3px;
+ border-bottom: 3px solid orange;
+ color: darkorange;
+ font-weight: 800;
+
+}
+.welcome{
+font-size: 1.3rem;
+margin-top: 1rem;
+color: orange;
+font-weight: bold;
+font-style: oblique;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.box .button{
+    background: linear-gradient(to top, #ccff33 0%, #00ffff 100%);
+    padding:1%;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color:black;
+}
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+@media (max-width: 900px) {
+  
+}
+</style>
+</head>
+<body onload="starttime()">
+<nav>
+  <div class="logo">STASS | Check Details</div>
+  <ul>
+            <li><a href="/booking">GoTo Book For Appointment</a></li>
+            
+    <!--<li><a href="#"><i style="font-size:24px" class="fa">Logout&#xf08b;</i>
+</a></li>-->
+      
+  </ul>
+  
+</nav>
+<div class="container">
+  
+  <div class="clinicInfo">
+    Our Registered Clinics
+  </div>
+  </div>
+
+<div class="full-cont">
+
+<div class="cont">
+<div class="myDIV">
+<table>
+  <thead>
+    <tr>
+      <th>ClinicID</th>
+      <th>Clinic Name</th>
+     
+      
+      
+    </tr>
+  </thead>
+  <tbody id="tbd">
+    {% for row in data %}
+       <tr class="en1">
+         
+         <td class="en">{{row[0]}}</td>
+         <td class="en">{{row[1]}}</td>
+       </tr>
+       {% endfor %}
+  </tbody>
+</table>
+<div class="no-entries">
+        {% with errors = get_flashed_messages(category_filter=["no-entries"]) %}
+            {% if errors %}
+                {%- for message in errors %}
+
+                   {{message}}
+                {% endfor -%}
+            {% endif %}
+        {% endwith %}
+    </div>
+<br>
+
+
+
+</div>
+</div>
+<div class="search-bar">
+ <b>Search DOCTORS according to the given CLINIC IDs<form action="/checkDetails" method="POST">
+          <input id="searchb" type="text" 
+                 placeholder="Search here" name="clinicID">
+          <input type="submit" value="Search">
+          </form>
+        </b>
+</div>
+
+
+<div class="myDIV">
+<table>
+  <thead>
+    <tr>
+      <th>ClinicID</th>
+      <th>Doctor Name</th>
+     <th>Specialization</th>
+     <th>Time</th>
+     <th>Days</th>
+      
+    </tr>
+  </thead>
+  <tbody id="tbd">
+    {% for row in data1 %}
+       <tr class="en1">
+         
+         <td class="en">{{row[0]}}</td>
+         <td class="en">{{row[1]}}</td>
+         <td class="en">{{row[2]}}</td>
+         <td class="en">{{row[3]}}</td>
+         <td class="en">{{row[4]}}</td>
+       </tr>
+       {% endfor %}
+  </tbody>
+</table>
+
+<div class="entries-mssg">
+        {% with errors = get_flashed_messages(category_filter=["entries-mssg"]) %}
+            {% if errors %}
+                {%- for message in errors %}
+
+                   {{message}}
+                {% endfor -%}
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+</div>
+<div class="note">
+<p><b>Note: </b>Please check your respective doctor/s before confirming your booking</p>
+</div>
+
+</body>
+</html>
+

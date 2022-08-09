@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dashboard-For-Clinics</title>
+	<link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
+		*{
+			margin: 0;
+			font-family: 'Source Sans Pro', sans-serif;
+		}
+		nav{
+			display: flex;
+  background-color:#2f4858;
+   align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  flex-wrap: wrap;
+  color: white;
+		}
+		.logo{
+			font-size: 1.4rem;
+			font-weight: 600;
+			color:#fcc200;
+		}
+		nav ul{
+			display: flex;
+			color: white;
+		}
+		nav ul li{
+			margin: auto;
+            margin-right: 1rem;
+            list-style: none;
+		}
+		nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fcc200;
+}
+
+.footer {
+   display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-wrap: wrap;
+   position:absolute;
+   left: 0;
+   bottom: 0;
+   background-color: #2f4858;
+   color: black;
+   text-align: center;
+   height: 10%;
+}
+.footer .fp{
+  margin-top:20;
+  position:absolute;
+  bottom: 2%;
+  right:5%;
+  font-weight:900;
+  color:#ffffc2
+}
+.container{
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+}
+.clinicInfo{
+ margin: 1rem;
+ background-color: #fafad2;
+ box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+ padding: 2rem;
+ border-radius: 3px;
+ border-top: 3px solid orange;
+
+}
+.welcome{
+font-size: 1.3rem;
+margin-top: 1rem;
+color: orange;
+font-weight: bold;
+font-style: oblique;
+}
+	</style>
+
+
+
+</head>
+<body>
+<nav>
+	
+	
+	<div class="logo">STASS  |  Dashboard For Clinic {{name}}</div>
+	<ul>
+		<li><a class="active" href="/dashboard/{{val}}">Home</a></li>
+		<li><a href="{{url_for('dcheck',id=val)}}">Doctor</a></li>
+		<li><a href="{{url_for('pcheck',id=val)}}">Patient</a></li>
+		<!--<li><a href="#"><i style="font-size:24px" class="fa">Logout&#xf08b;</i>
+</a></li>-->
+     <a href="/logout"><i style="font-size: 1.2rem;cursor:pointer;padding: 0.5rem;background: white;color:#2f4858;border-radius:4px " class="fa">Logout &#xf08b;</i> </a>  
+	</ul>
+	
+	 
+</nav>
+<div class="container">
+	<div class="welcome">welcome</div>
+	<div class="clinicInfo">
+		Clinic Name  :  {{name}} 
+	</div>
+	
+</div>
+<div class="footer">
+  <p class="fp">Designed And Developed By STASS Team</p>
+</div>
+</body>
+</html>

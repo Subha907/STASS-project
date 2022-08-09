@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dashboard-For-Admin</title>
+	<link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
+		*{
+			margin: 0;
+			font-family: 'Source Sans Pro', sans-serif;
+		}
+		nav{
+			display: flex;
+  background-color:#2f4858;
+   align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  flex-wrap: wrap;
+  color: white;
+		}
+		.logo{
+			font-size: 1.4rem;
+			font-weight: 600;
+			color:#fcc200;
+		}
+		nav ul{
+			display: flex;
+			color: white;
+		}
+		nav ul li{
+			margin: auto;
+            margin-right: 1rem;
+            list-style: none;
+		}
+		nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fcc200;
+}
+
+.footer {
+   display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-wrap: wrap;
+   position:absolute;
+   left: 0;
+   bottom: 0;
+   background-color: #2f4858;
+   color: black;
+   text-align: center;
+   height: 10%;
+}
+.footer .fp{
+  margin-top:20;
+  position:absolute;
+  bottom: 2%;
+  right:5%;
+  font-weight:900;
+  color:#ffffc2
+}
+.container{
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+}
+.clinicInfo{
+ margin: 1rem;
+ background-color: #fafad2;
+ box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+ padding: 2rem;
+ border-radius: 3px;
+ border-top: 3px solid orange;
+
+}
+.welcome{
+font-size: 1.3rem;
+margin-top: 1rem;
+color: orange;
+font-weight: bold;
+font-style: oblique;
+}
+.control-panel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+	}
+
+.control-panel .clinic1{
+	margin: 7rem;
+	display: flex;
+   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 0.1), 0 2px 3px 0px rgb(0 0 0 / 0.1);
+	
+	background-color:#f0e68c ;*/
+	
+	justify-content: center;
+	align-items: center;
+	padding: 2rem 3rem;
+	 border-radius: 3px;
+}
+img{
+	height: 60px;
+	width: 50px;
+	margin-right: 1rem;
+	background-color: white;
+	padding: 0.4rem;
+	border-radius: 3px;
+}
+
+	</style>
+
+
+
+
+</head>
+<body>
+<nav>
+	
+	
+	<div class="logo">STASS  |  Dashboard</div>
+	<ul>
+		<li><a class="active" href="/dashboard$">Home</a></li>
+		
+		<!--<li><a href="#"><i style="font-size:24px" class="fa">Logout&#xf08b;</i>
+</a></li>-->
+     <a href="/logoutAdmin"><i style="font-size: 1.2rem;cursor:pointer;padding: 0.5rem;background: white;color:#2f4858;border-radius:4px " class="fa">Logout &#xf08b;</i> </a>  
+	</ul>
+	
+	 
+</nav>
+<div class="container">
+	<div class="welcome">welcome</div>
+	<div class="clinicInfo">
+		Admin Name  :  {{name}} 
+	</div>
+	</div>
+	<div class="control-panel">
+		<a href="/adclinic">
+		<div class="clinic clinic1">
+			<div class="sub-con-1">
+				<img src="../static/images/clinic.png">
+			</div>
+			<div class="sub-con-2">
+				clinic
+			</div>
+			
+		</div>
+		</a>
+		<a href="/addoctor">
+		<div class="doctor clinic1">
+			<div class="sub-con-1">
+				<img src="../static/images/doctor.png">
+			</div>
+			<div class="sub-con-2">
+				doctor
+			</div>
+		</div>
+		</a>
+		<a href="/adpatient">
+		<div class="patient clinic1">
+		<div class="sub-con-1">
+				<img src="../static/images/patient.png">
+			</div>
+			<div class="sub-con-2">
+			patient
+			</div>
+		</div>
+		</a>
+	</div>
+<div class="footer">
+  <p class="fp">Designed And Developed By STASS Team</p>
+</div>
+</body>
+</html>

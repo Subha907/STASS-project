@@ -1,0 +1,217 @@
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon" />
+      <title>About Us</title>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
+
+
+ *{
+  box-sizing: border-box;
+  margin:0;
+  font-family: 'Source Sans Pro', sans-serif;
+ }
+
+
+nav{
+  display: flex;
+ 
+  height: 80px;
+  background-color:#2f4858;
+   align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  
+}
+
+nav .logo{
+  color: #FFA500;
+  font-size: 35px;
+  font-weight: 600;
+  display: flex;
+  cursor: pointer;
+}
+
+nav .logo .logoimga img{
+  height: 50px;
+  width: 50px;
+  border-radius: 2px;
+
+}
+nav .logo .childh{
+  margin-top: 0.5rem;
+}
+nav .logo .childh U{
+  text-decoration-line: underline;
+  
+  text-decoration-color:#2f4858;
+
+}
+
+nav .logo::first-letter{
+  color: whitesmoke;
+  font-size: 45px;
+  font-weight: 600;
+  
+  
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #FFA500
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 3;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+}
+
+
+.footer {
+   display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-wrap: wrap;
+   position:relative;
+   left: 0;
+   bottom: 0;
+   width: 100vw;
+   background-color: #2f4858;
+   color: black;
+   text-align: center;
+   height: 10%;
+}
+.footer .fp{
+  margin-top:20;
+  position:absolute;
+  bottom: 2%;
+  right:5%;
+  font-weight:900;
+  color:#ffffc2
+}
+
+ </style>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js" integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      
+   </head>
+   <body>
+    
+      <nav>
+        
+         <div class="logo">
+          <div class="logoimga">
+            <img  src="../static/images/logostass.jpg">
+          </div>
+           <div class="childh"><U>TASS</U></div> 
+            
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li><a  href="/">Home</a></li>
+            
+            <li><a href="/contacts">Contacts</a></li>
+            <li><a class="active" href="/about">About Us</a></li>
+            <li><a href="/booking">Book For Appointment</a></li>
+            <li><a href="/ClinicLogin">Clinic LogIn</a></li>
+
+         </ul>
+        
+      </nav>
+      <div class="con-12" style="display: flex;margin: 4rem;flex-direction: column;font-size: 1.5rem;">
+        <div class="history" style="margin-bottom: 3rem;">
+         <h2 style="color: #FF7F50;">History Of STASS</h2>
+         <p>Stass is a Clinic which has its own Booking Service for Appointments with Doctors on the basis of user requirements. We operate and maintain the Stass clinic website . We hope our sincere efforts will meet the expectations of our valued patients in getting world-class booking appointment service.Thanks from our side and God will be always with you. WE ARE AVAILABLE FOR YOU 24*7. </p>
+        </div>
+        <div class="why" >
+          <h2 style="color: #FF7F50;">Why Do You Choose Our Website?</h2>
+         <ul>
+           <li>Easy To Use</li>
+           <li>Friendly User Interface</li>
+           <li>Fast &amp; Secure</li>
+           <li>24*7 Available</li>
+
+
+         </ul>
+        </div>
+      </div>
+      
+</div>
+   </body>
+</html>
